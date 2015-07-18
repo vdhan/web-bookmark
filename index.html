@@ -17,8 +17,7 @@
 					display: inline-block;
 					font-size:1em;
 					margin:auto;
-					border: solid 3px;
-					border-color: #00f;
+					border: 3px solid #00f;
 					border-radius: 5px;
 					padding: 10px
 				}
@@ -27,7 +26,7 @@
 		
 		<body>
 			<div id='wrap'>
-				<form action='server/createData.php' target='server'>
+				<form>
 					<fieldset>
 						<legend>Nhập đánh dấu</legend>
 						<table cellspacing="5" class="Table">
@@ -55,8 +54,6 @@
 			</div>
 		
 			<p style='color:#f00'>Copyright &copy; 2011 Hoàng Ân</p>
-			<p><img class='mid' src="../img/HTML5.png" width="64" height="64" alt="HTML5" title="HTML5" /> <img class='mid' src="../img/CSS3.png" width="64" height="64" alt="CSS3" title="CSS3" /></p>
-			<div id='Test'></div>
 			
 			<form id='mod' action='server/modifyData.php' target='server'></form>
 			<form id='del' action='server/deleteData.php' target='server' onsubmit='return confirm("Bạn có chắc chắn muốn xóa đánh dấu này không?")'></form>

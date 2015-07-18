@@ -19,4 +19,3 @@ $data->appendChild($url);
 $bm=$doc->getElementsByTagName("bookmark")->item(0);
 $bm->appendChild($data);
 $doc->save("../bookmark.xml");
-?>
