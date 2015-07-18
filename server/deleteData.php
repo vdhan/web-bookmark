@@ -6,4 +6,3 @@ $a = $_REQUEST["id"];
 $x=$doc->getElementsByTagName('data')->item($a);
 $doc->documentElement->removeChild($x);
 $doc->save("../bookmark.xml");
-?>
