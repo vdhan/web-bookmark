@@ -25,7 +25,7 @@
 		</head>
 		
 		<body>
-			<div id='wrap'>
+			<div id="wrap">
 				<form>
 					<fieldset>
 						<legend>Nhập đánh dấu</legend>
@@ -43,21 +43,21 @@
 							<tr>
 								<td><input type="submit" value="Thêm" id="Ok" title="Gửi" /></td>
 								<td><input type="reset" value="Xóa" title="Xóa thông tin nhập" id="Clear" accesskey="c" /></td>
-								<td><input type="button" value="Xem" title="Xem đánh dấu" class='myBookmark' accesskey="m" /></td>
+								<td><input type="button" value="Xem" title="Xem đánh dấu" class="myBookmark" accesskey="m" /></td>
 							</tr>
 						</table>
 					</fieldset>
 				</form>
 		
 				<div id="Data"></div>
-				<button type="submit" name="Id" class='subBtn' value="0" title="Sửa đánh dấu" form="mod">Đồng ý</button>
+				<button type="submit" name="Id" class="subBtn" value="0" title="Sửa đánh dấu" form="mod">Đồng ý</button>
 			</div>
 		
-			<p style='color:#f00'>Copyright &copy; 2011 Hoàng Ân</p>
-			<div id='Test'></div>
-			
-			<form id='mod' action='server/modifyData.php' target='server'></form>
-			<form id='del' action='server/deleteData.php' target='server' onsubmit='return confirm("Bạn có chắc chắn muốn xóa đánh dấu này không?")'></form>
-			<iframe name='server' hidden='hidden'></iframe>
+			<p style="color:#f00">Copyright &copy; 2011 Hoàng Ân</p>
+			<div id="Test"></div>
+
+			<form id="mod" action="server/modifyData.php" target="server"></form>
+			<form id="del" action="server/deleteData.php" target="server" onsubmit="return confirm('Bạn có chắc chắn muốn xóa đánh dấu này không?')"></form>
+			<iframe name="server" hidden="hidden"></iframe>
 		</body>
 	</html>
