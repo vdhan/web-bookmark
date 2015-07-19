@@ -1,5 +1,5 @@
 <?php
-$doc = new DOMDocument('1.0','UTF-8');
+$doc = new DOMDocument('1.0', 'UTF-8');
 $doc->load('../bookmark.xml');
 $a = $_REQUEST['Name'];
 $b = $_REQUEST['Url'];

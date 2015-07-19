@@ -98,12 +98,9 @@ $(document).ready(function() {
 		}
 	});
 
-	//$('form:first').submit(function() {
-	//	setTimeout('$("#Clear").click(); showData()', 300);
-	//});
-
-	$('#Ok').click(function() {
-		$.post('createData.php', {Name: $('#Name').val(), Url: $('#Url').val()}, function() {
+	$('#create').submit(function(e) {
+		e.preventDefault();
+		$.post('server/createData.php', {Name: $('#Name').val(), Url: $('#Url').val()}, function() {
 			$('#Clear').click();
 			showData();
 		});

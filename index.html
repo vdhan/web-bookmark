@@ -7,12 +7,12 @@
 			<script type="text/javascript" src="js/jquery.min.js"></script>
 			<script type="text/javascript" src="js/Anload.js"></script>
 			<script type="text/javascript" src="js/Anscript.js"></script>
-		
+
 			<style>
 				form {
 					display: inline-block;
 				}
-				
+
 				#wrap {
 					display: inline-block;
 					font-size: 1em;
@@ -23,10 +23,10 @@
 				}
 			</style>
 		</head>
-		
+
 		<body>
 			<div id="wrap">
-				<form>
+				<form id="create">
 					<fieldset>
 						<legend>Nhập đánh dấu</legend>
 						<table cellspacing="5" class="Table">
@@ -34,26 +34,25 @@
 								<td><label>Tên:</label></td>
 								<td colspan="2"><input type="text" name="Name" id="Name" size="50" placeholder="Tên đánh dấu" required="required" accesskey="n" /></td>
 							</tr>
-				
+
 							<tr>
 								<td><label>Liên kết:</label></td>
 								<td colspan="2"><input type="url" name="Url" id="Url" size="50" autofocus="autofocus" required="required" placeholder="Địa chỉ đánh dấu" accesskey="u" /></td>
 							</tr>
-				
+
 							<tr>
-								<!--<td><input type="submit" value="Thêm" id="Ok" title="Gửi" /></td>-->
-								<td><button type="button" id="Ok" title="Gửi">Thêm</button></td>
-								<td><input type="reset" value="Xóa" title="Xóa thông tin nhập" id="Clear" accesskey="c" /></td>
-								<td><input type="button" value="Xem" title="Xem đánh dấu" class="myBookmark" accesskey="m" /></td>
+								<td><button type="submit" id="Ok" title="Gửi">Thêm</button></td>
+								<td><button type="reset" title="Xóa thông tin nhập" id="Clear" accesskey="c">Xóa</button></td>
+								<td><button type="button" title="Xem đánh dấu" class="myBookmark" accesskey="m">Xem</button></td>
 							</tr>
 						</table>
 					</fieldset>
 				</form>
-		
+
 				<div id="Data"></div>
 				<button type="submit" name="Id" class="subBtn" value="0" title="Sửa đánh dấu" form="mod">Đồng ý</button>
 			</div>
-		
+
 			<p style="color:#f00">Copyright &copy; 2011 Hoàng Ân</p>
 			<div id="Test"></div>
 
