@@ -25,7 +25,7 @@ function showData()
 			txt = txt + '<td class="col2">&nbsp;</td>';
 		}
 		txt = txt + '<td><button type="button" class="modBtn" form="mod" title="Sửa đánh dấu này" name="Id" value="' + i + '" >Sửa</button></td>';
-		txt = txt + '<td><button type="submit" class="delBtn" title="Xóa đánh dấu này" form="del" name="id" value="' + i + '">Xóa</button></td>';
+		txt = txt + '<td><button type="button" class="delBtn" title="Xóa đánh dấu này" value="' + i + '">Xóa</button></td>';
 		txt = txt + '</tr>';
 	}
 	txt = txt + '</table>';
@@ -49,11 +49,11 @@ function loadData()
 		{
 			t = $(this).val();
 			var rowData = $('.rowData');
-			s = rowData.filter(':eq(' + t + ') td.col1');
-			r = rowData.filter(':eq(' + t + ') td.col2');
+			s = rowData.filter(':eq("' + t + '") td.col1');
+			r = rowData.filter(':eq("' + t + '") td.col2');
 			$('.rowData:eq(' + t + ') td.col1').html('<input type="text" name="Name" class="modName" form="mod" placeholder="Tên đánh dấu" required="required" value="' + s + '" />');
 			$('.rowData:eq(' + t + ') td.col2').html('<input type="url" name="Url" class="modUrl" form="mod" placeholder="Địa chỉ đánh dấu" required="required" value="' + r + '" />');
-			var subBtn = $('.subBtn');
+			var subBtn = $('#subBtn');
 			subBtn.attr('value', t);
 			subBtn.css('display', 'inline');
 			f2 = false;
@@ -62,6 +62,13 @@ function loadData()
 		{
 			alert('Bạn chỉ có thể sửa 1 đánh dấu mỗi lần');
 		}
+	});
+
+	$('.delBtn').click(function() {
+		$.post('server/deleteData.php', {id: this.value}, function() {
+			$('#Clear').click();
+			showData();
+		});
 	});
 }
 
@@ -106,13 +113,9 @@ $(document).ready(function() {
 		});
 	});
 
-	$('#del').submit(function() {
-		$('.subBtn').css('display', 'none');
-		setTimeout('showData()', 300);
-	});
-
-	$('#mod').submit(function() {
-		$('.subBtn').css('display', 'none');
+	$('#mod').submit(function(e) {
+		e.preventDefault();
+		$('#subBtn').css('display', 'none');
 		setTimeout('showData(); f2 = true', 300);
 	});
 });
