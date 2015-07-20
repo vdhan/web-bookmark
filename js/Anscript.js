@@ -65,10 +65,13 @@ function loadData()
 	});
 
 	$('.delBtn').click(function() {
-		$.post('server/deleteData.php', {id: this.value}, function() {
-			$('#Clear').click();
-			showData();
-		});
+		if(confirm('Bạn có chắc chắn muốn xóa đánh dấu này không?'))
+		{
+			$.post('server/deleteData.php', {id: this.value}, function() {
+				$('#Clear').click();
+				showData();
+			});
+		}
 	});
 }
 
