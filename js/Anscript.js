@@ -83,7 +83,7 @@ $(document).ready(function() {
 		$(this).select();
 	});
 
-	$('.myBookmark').click(function() {
+	$('#myBookmark').click(function() {
 		if(f1 == 0)
 		{
 			showData();
