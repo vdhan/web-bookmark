@@ -88,19 +88,22 @@ $(document).ready(function() {
 		{
 			showData();
 			$('#Data').fadeIn('slow');
-			$(this).attr({value: 'Ẩn', title: 'Ẩn đánh dấu'});
+			$(this).attr({title: 'Ẩn đánh dấu'});
+			this.textContent = 'Ẩn';
 			f1 = 1;
 		}
 		else if(f1 == 1)
 		{
 			$('#Data').slideUp('slow');
-			$(this).attr({value: 'Xem', title: 'Xem đánh dấu'});
+			$(this).attr({title: 'Xem đánh dấu'});
+			this.textContent = 'Xem';
 			f1 = 2;
 		}
 		else
 		{
 			$('#Data').slideDown('slow');
-			$(this).attr({value: 'Ẩn', title: 'Ẩn đánh dấu'});
+			$(this).attr({title: 'Ẩn đánh dấu'});
+			this.textContent = 'Ẩn';
 			f1 = 1;
 		}
 	});
