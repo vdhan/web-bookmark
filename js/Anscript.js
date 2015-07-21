@@ -13,18 +13,18 @@ function showData()
 		txt = txt + '<tr class="rowData">';
 		y = x[i].getElementsByTagName('name');
 		try {
-			txt = txt + '<td class="col1">' + y[0].firstChild.nodeValue + '</td>';
+			txt = txt + '<td>' + y[0].firstChild.nodeValue + '</td>';
 		} catch(er) {
-			txt = txt + '<td class="col1">&nbsp;</td>';
+			txt = txt + '<td>&nbsp;</td>';
 		}
 
 		y = x[i].getElementsByTagName('url');
 		try {
-			txt = txt + '<td class="col2"><a href="' + y[0].firstChild.nodeValue + '" target="_blank">' + y[0].firstChild.nodeValue + '</a></td>';
+			txt = txt + '<td><a href="' + y[0].firstChild.nodeValue + '" target="_blank">' + y[0].firstChild.nodeValue + '</a></td>';
 		} catch(er) {
-			txt = txt + '<td class="col2">&nbsp;</td>';
+			txt = txt + '<td>&nbsp;</td>';
 		}
-		txt = txt + '<td><button type="button" class="modBtn" form="mod" title="Sửa đánh dấu này" name="Id" value="' + i + '" >Sửa</button></td>';
+		txt = txt + '<td><button type="button" class="modBtn" title="Sửa đánh dấu này" value="' + i + '">Sửa</button></td>';
 		txt = txt + '<td><button type="button" class="delBtn" title="Xóa đánh dấu này" value="' + i + '">Xóa</button></td>';
 		txt = txt + '</tr>';
 	}
@@ -35,36 +35,21 @@ function showData()
 
 function loadData()
 {
-	var t;
-	var s;
-	var r;
-
 	if(!f2)
 	{
 		f2 = true;
 	}
 
 	$('.modBtn').click(function() {
-		if(f2)
+		if($(this).text() == 'Sửa')
 		{
 			var row = $(this).closest('tr');
-			s = row.children().eq(0).text();
-			r = row.children()
-			return;
-			t = $(this).val();
-			var rowData = $('.rowData');
-			s = rowData.filter(':eq("' + t + '") td.col1');
-			r = rowData.filter(':eq("' + t + '") td.col2');
-			$('.rowData:eq(' + t + ') td.col1').html('<input type="text" name="Name" class="modName" form="mod" placeholder="Tên đánh dấu" required="required" value="' + s + '" />');
-			$('.rowData:eq(' + t + ') td.col2').html('<input type="url" name="Url" class="modUrl" form="mod" placeholder="Địa chỉ đánh dấu" required="required" value="' + r + '" />');
-			var subBtn = $('#subBtn');
-			subBtn.attr('value', t);
-			subBtn.css('display', 'inline');
+			var name = row.children().eq(0);
+			var url = row.children().eq(1);
+			name.html('<input type="text" name="Name" class="modName" form="mod" placeholder="Tên đánh dấu" required="required" value="' + name.text() + '" />');
+			url.html('<input type="url" name="Url" class="modUrl" form="mod" placeholder="Địa chỉ đánh dấu" required="required" value="' + url.text() + '" />');
+			$(this).test('Cập nhật');
 			f2 = false;
-		}
-		else
-		{
-			alert('Bạn chỉ có thể sửa 1 đánh dấu mỗi lần');
 		}
 	});
 
