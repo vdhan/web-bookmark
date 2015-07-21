@@ -45,11 +45,11 @@ function loadData()
 			$(this).text('Cập nhật');
 		}
 		else {
-			$(this).text('Sửa');
 			$.post('server/modifyData.php', {Name: name.children().eq(0).val(), Url: url.children().eq(0).val(), Id: row.index() - 1}, function() {
 				$('#Clear').click();
 				showData();
 			});
+			$(this).text('Sửa');
 		}
 	});
 
