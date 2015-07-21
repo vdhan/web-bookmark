@@ -1,14 +1,11 @@
-var f2 = true;
-
 function showData()
 {
-	var txt, y, x, i;
+	var y;
 	var xdoc = loadXML();
+	var x = xdoc.documentElement.getElementsByTagName('data');
 
-	txt = '<table border="1" cellpadding="10" class="Table showData"><tr><th>Tên</th><th>Đường dẫn</th><th>Sửa</th><th>Xóa</th></tr>';
-	x = xdoc.documentElement.getElementsByTagName('data');
-
-	for(i = 0; i < x.length; i++)
+	var txt = '<table border="1" cellpadding="10" class="Table showData"><tr><th>Tên</th><th>Đường dẫn</th><th>Sửa</th><th>Xóa</th></tr>';
+	for(var i = 0; i < x.length; i++)
 	{
 		txt = txt + '<tr class="rowData">';
 		y = x[i].getElementsByTagName('name');
@@ -24,10 +21,12 @@ function showData()
 		} catch(er) {
 			txt = txt + '<td>&nbsp;</td>';
 		}
+
 		txt = txt + '<td><button type="button" class="modBtn" title="Sửa đánh dấu này" value="' + i + '">Sửa</button></td>';
 		txt = txt + '<td><button type="button" class="delBtn" title="Xóa đánh dấu này" value="' + i + '">Xóa</button></td>';
 		txt = txt + '</tr>';
 	}
+
 	txt = txt + '</table>';
 	document.getElementById('Data').innerHTML = txt;
 	loadData();
@@ -35,21 +34,22 @@ function showData()
 
 function loadData()
 {
-	if(!f2)
-	{
-		f2 = true;
-	}
-
 	$('.modBtn').click(function() {
-		if($(this).text() == 'Sửa')
-		{
-			var row = $(this).closest('tr');
-			var name = row.children().eq(0);
-			var url = row.children().eq(1);
-			name.html('<input type="text" name="Name" class="modName" form="mod" placeholder="Tên đánh dấu" required="required" value="' + name.text() + '" />');
-			url.html('<input type="url" name="Url" class="modUrl" form="mod" placeholder="Địa chỉ đánh dấu" required="required" value="' + url.text() + '" />');
-			$(this).test('Cập nhật');
-			f2 = false;
+		var row = $(this).closest('tr');
+		var name = row.children().eq(0);
+		var url = row.children().eq(1);
+
+		if($(this).text() == 'Sửa') {
+			name.html('<input type="text" class="modName" placeholder="Tên đánh dấu" required="required" value="' + name.text() + '" />');
+			url.html('<input type="url" class="modUrl" placeholder="Địa chỉ đánh dấu" required="required" value="' + url.text() + '" />');
+			$(this).text('Cập nhật');
+		}
+		else {
+			$(this).text('Sửa');
+			$.post('server/modifyData.php', {Name: name.children().eq(0).val(), Url: url.children().eq(0).val(), Id: row.index() - 1}, function() {
+				$('#Clear').click();
+				showData();
+			});
 		}
 	});
 
@@ -106,11 +106,5 @@ $(document).ready(function() {
 			$('#Clear').click();
 			showData();
 		});
-	});
-
-	$('#mod').submit(function(e) {
-		e.preventDefault();
-		$('#subBtn').css('display', 'none');
-		setTimeout('showData(); f2 = true', 300);
 	});
 });

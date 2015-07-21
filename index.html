@@ -2,26 +2,11 @@
 	<html>
 		<head>
 			<meta charset="UTF-8">
+			<title>My Bookmark</title>
 			<link rel="stylesheet" type="text/css" href="css/AnStyle.css">
-			<title>Hoàng Ân's bookmark</title>
 			<script type="text/javascript" src="js/jquery.min.js"></script>
 			<script type="text/javascript" src="js/Anload.js"></script>
 			<script type="text/javascript" src="js/Anscript.js"></script>
-
-			<style>
-				form {
-					display: inline-block;
-				}
-
-				#wrap {
-					display: inline-block;
-					font-size: 1em;
-					margin: auto;
-					border: 3px solid #00f;
-					border-radius: 5px;
-					padding: 10px
-				}
-			</style>
 		</head>
 
 		<body>
@@ -32,12 +17,12 @@
 						<table cellspacing="5" class="Table">
 							<tr>
 								<td><label>Tên:</label></td>
-								<td colspan="2"><input type="text" name="Name" id="Name" size="50" placeholder="Tên đánh dấu" required accesskey="n" /></td>
+								<td colspan="2"><input type="text" name="Name" id="Name" size="50" placeholder="Tên đánh dấu" required accesskey="n"></td>
 							</tr>
 
 							<tr>
 								<td><label>Liên kết:</label></td>
-								<td colspan="2"><input type="url" name="Url" id="Url" size="50" autofocus="autofocus" required placeholder="Địa chỉ đánh dấu" accesskey="u" /></td>
+								<td colspan="2"><input type="url" name="Url" id="Url" size="50" autofocus="autofocus" placeholder="Địa chỉ đánh dấu" required accesskey="u"></td>
 							</tr>
 
 							<tr>
@@ -50,10 +35,8 @@
 				</form>
 
 				<div id="Data"></div>
-				<button type="submit" id="subBtn" title="Sửa đánh dấu" form="mod">Đồng ý</button>
 			</div>
 
 			<p style="color:#f00">Copyright &copy; 2011 Hoàng Ân</p>
-			<form id="mod" action="server/modifyData.php" target="server"></form>
 		</body>
 	</html>

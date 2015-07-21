@@ -4,13 +4,17 @@ body {
 	font-family: sans-serif;
 }
 
-#wrapper {
-	width: 1024px;
+form {
+	display: inline-block;
+}
+
+#wrap {
+	display: inline-block;
 	font-size: 1em;
-	border: 3px solid #0000ff;
-	border-radius: 10px;
-	padding: 10px 5px;
 	margin: auto;
+	border: 3px solid #00f;
+	border-radius: 5px;
+	padding: 10px
 }
 
 #Data {
@@ -28,14 +32,6 @@ body {
 	word-wrap: break-word;
 	table-layout: fixed;
 	width: 100%;
-}
-
-.mid {
-	vertical-align:middle
-}
-
-#subBtn {
-	display: none;
 }
 
 #myBookmark {
