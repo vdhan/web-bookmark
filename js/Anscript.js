@@ -47,6 +47,10 @@ function loadData()
 	$('.modBtn').click(function() {
 		if(f2)
 		{
+			var row = $(this).closest('tr');
+			s = row.children().eq(0).text();
+			r = row.children()
+			return;
 			t = $(this).val();
 			var rowData = $('.rowData');
 			s = rowData.filter(':eq("' + t + '") td.col1');
@@ -67,7 +71,7 @@ function loadData()
 	$('.delBtn').click(function() {
 		if(confirm('Bạn có chắc chắn muốn xóa đánh dấu này không?'))
 		{
-			$.post('server/deleteData.php', {id: this.value}, function() {
+			$.post('server/deleteData.php', {id: $(this).val()}, function() {
 				$('#Clear').click();
 				showData();
 			});
@@ -92,21 +96,21 @@ $(document).ready(function() {
 			showData();
 			$('#Data').fadeIn('slow');
 			$(this).attr({title: 'Ẩn đánh dấu'});
-			this.textContent = 'Ẩn';
+			$(this).text('Ẩn');
 			f1 = 1;
 		}
 		else if(f1 == 1)
 		{
 			$('#Data').slideUp('slow');
 			$(this).attr({title: 'Xem đánh dấu'});
-			this.textContent = 'Xem';
+			$(this).text('Xem');
 			f1 = 2;
 		}
 		else
 		{
 			$('#Data').slideDown('slow');
 			$(this).attr({title: 'Ẩn đánh dấu'});
-			this.textContent = 'Ẩn';
+			$(this).text('Ẩn');
 			f1 = 1;
 		}
 	});
