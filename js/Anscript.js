@@ -14,14 +14,14 @@ function showData()
 		y = x[i].getElementsByTagName('name');
 		try {
 			txt = txt + '<td class="col1">' + y[0].firstChild.nodeValue + '</td>';
-		} catch (er) {
+		} catch(er) {
 			txt = txt + '<td class="col1">&nbsp;</td>';
 		}
 
 		y = x[i].getElementsByTagName('url');
 		try {
 			txt = txt + '<td class="col2"><a href="' + y[0].firstChild.nodeValue + '" target="_blank">' + y[0].firstChild.nodeValue + '</a></td>';
-		} catch (er) {
+		} catch(er) {
 			txt = txt + '<td class="col2">&nbsp;</td>';
 		}
 		txt = txt + '<td><button type="button" class="modBtn" form="mod" title="Sửa đánh dấu này" name="Id" value="' + i + '" >Sửa</button></td>';
