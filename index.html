@@ -4,9 +4,14 @@
 			<meta charset="UTF-8">
 			<title>My Bookmark</title>
 			<link rel="stylesheet" type="text/css" href="css/AnStyle.css">
-			<script type="text/javascript" src="js/jquery.min.js"></script>
-			<script type="text/javascript" src="js/Anload.js"></script>
-			<script type="text/javascript" src="js/Anscript.js"></script>
+			<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+			<script>
+				if(!window.jQuery) {
+					document.write('<script src="js/jquery.min.js"><\/script>');
+				}
+			</script>
+			<script src="js/Anload.js"></script>
+			<script src="js/Anscript.js"></script>
 		</head>
 
 		<body>
