@@ -1,13 +1,23 @@
 <!DOCTYPE html>
-	<html>
+	<html lang="vi">
 		<head>
-			<meta charset="UTF-8">
 			<title>My Bookmark</title>
-			<link rel="stylesheet" type="text/css" href="css/AnStyle.css">
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" href="css/AnStyle.css">
+			<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 			<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 			<script>
 				if(!window.jQuery) {
 					document.write('<script src="js/jquery.min.js"><\/script>');
+				}
+			</script>
+			<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+			<script>
+				/** @namespace window.jQuery.fn.modal */
+				if(!window.jQuery.fn.modal) {
+					document.write('<script src="js/bootstrap.min.js"><\/script>');
+					document.write('<link rel="stylesheet" href="css/bootstrap.min.css">');
 				}
 			</script>
 			<script src="js/Anload.js"></script>
