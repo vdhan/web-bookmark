@@ -4,7 +4,7 @@ function showData()
 	var xdoc = loadXML();
 	var x = xdoc.documentElement.getElementsByTagName('data');
 
-	var txt = '<table class="table table-bordered table-striped table-hover">' +
+	var txt = '<table class="Table table table-bordered table-striped table-hover">' +
 		'<tr>' +
 		'<th class="text-center">Tên</th>' +
 		'<th class="text-center">Đường dẫn</th>' +
