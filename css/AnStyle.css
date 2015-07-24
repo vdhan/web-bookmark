@@ -1,39 +1,14 @@
 body {
 	text-align: center;
-	font-size: 100%;
-	font-family: sans-serif;
-}
-
-form {
-	display: inline-block;
 }
 
 #wrap {
-	display: inline-block;
-	font-size: 1em;
-	margin: auto;
 	border: 3px solid #00f;
 	border-radius: 5px;
-	padding: 10px
+	margin: 10px auto;
+	padding: 10px;
 }
 
 #Data {
-	padding-top: 20px;
-	padding-bottom: 20px;
 	display: none;
-}
-
-.Table {
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.showData {
-	word-wrap: break-word;
-	table-layout: fixed;
-	width: 100%;
-}
-
-#myBookmark {
-	width: 60px;
 }

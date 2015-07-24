@@ -4,10 +4,17 @@ function showData()
 	var xdoc = loadXML();
 	var x = xdoc.documentElement.getElementsByTagName('data');
 
-	var txt = '<table border="1" cellpadding="10" class="Table showData"><tr><th>Tên</th><th>Đường dẫn</th><th>Sửa</th><th>Xóa</th></tr>';
+	var txt = '<table class="table table-bordered table-striped table-hover">' +
+		'<tr>' +
+		'<th class="text-center">Tên</th>' +
+		'<th class="text-center">Đường dẫn</th>' +
+		'<th class="text-center">Sửa</th>' +
+		'<th class="text-center">Xóa</th>' +
+		'</tr>';
+
 	for(var i = 0; i < x.length; i++)
 	{
-		txt = txt + '<tr class="rowData">';
+		txt = txt + '<tr>';
 		y = x[i].getElementsByTagName('name');
 		try {
 			txt = txt + '<td>' + y[0].firstChild.nodeValue + '</td>';
@@ -22,8 +29,8 @@ function showData()
 			txt = txt + '<td>&nbsp;</td>';
 		}
 
-		txt = txt + '<td><button type="button" class="modBtn" title="Sửa đánh dấu này" value="' + i + '">Sửa</button></td>';
-		txt = txt + '<td><button type="button" class="delBtn" title="Xóa đánh dấu này" value="' + i + '">Xóa</button></td>';
+		txt = txt + '<td><button type="button" class="modBtn btn btn-warning" title="Sửa đánh dấu này" value="' + i + '">Sửa</button></td>';
+		txt = txt + '<td><button type="button" class="delBtn btn btn-danger" title="Xóa đánh dấu này" value="' + i + '">Xóa</button></td>';
 		txt = txt + '</tr>';
 	}
 
@@ -40,8 +47,8 @@ function loadData()
 		var url = row.children().eq(1);
 
 		if($(this).text() == 'Sửa') {
-			name.html('<input type="text" class="modName" placeholder="Tên đánh dấu" required="required" value="' + name.text() + '" />');
-			url.html('<input type="url" class="modUrl" placeholder="Địa chỉ đánh dấu" required="required" value="' + url.text() + '" />');
+			name.html('<input type="text" class="form-control" placeholder="Tên đánh dấu" required="required" value="' + name.text() + '" />');
+			url.html('<input type="url" class="form-control" placeholder="Địa chỉ đánh dấu" required="required" value="' + url.text() + '" />');
 			$(this).text('Cập nhật');
 		}
 		else {

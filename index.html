@@ -14,7 +14,6 @@
 			</script>
 			<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 			<script>
-				/** @namespace window.jQuery.fn.modal */
 				if(!window.jQuery.fn.modal) {
 					document.write('<script src="js/bootstrap.min.js"><\/script>');
 					document.write('<link rel="stylesheet" href="css/bootstrap.min.css">');
@@ -25,33 +24,62 @@
 		</head>
 
 		<body>
-			<div id="wrap">
-				<form id="create">
-					<fieldset>
-						<legend>Nhập đánh dấu</legend>
-						<table cellspacing="5" class="Table">
-							<tr>
-								<td><label>Tên:</label></td>
-								<td colspan="2"><input type="text" name="Name" id="Name" size="50" placeholder="Tên đánh dấu" required accesskey="n"></td>
-							</tr>
+			<div class="container">
+				<div id="wrap">
+					<form id="create" class="form-horizontal" role="form">
+						<fieldset>
+							<legend>Nhập đánh dấu</legend>
+							<!--<table cellspacing="5" class="Table">-->
+								<!--<tr>-->
+									<!--<td><label>Tên:</label></td>-->
+									<!--<td colspan="2"><input type="text" name="Name" id="Name" size="50" placeholder="Tên đánh dấu" required accesskey="n"></td>-->
+								<!--</tr>-->
 
-							<tr>
-								<td><label>Liên kết:</label></td>
-								<td colspan="2"><input type="url" name="Url" id="Url" size="50" autofocus="autofocus" placeholder="Địa chỉ đánh dấu" required accesskey="u"></td>
-							</tr>
+								<!--<tr>-->
+									<!--<td><label>Liên kết:</label></td>-->
+									<!--<td colspan="2"><input type="url" name="Url" id="Url" size="50" autofocus="autofocus" placeholder="Địa chỉ đánh dấu" required accesskey="u"></td>-->
+								<!--</tr>-->
 
-							<tr>
-								<td><button type="submit" title="Gửi">Thêm</button></td>
-								<td><button type="reset" title="Xóa thông tin nhập" id="Clear" accesskey="c">Xóa</button></td>
-								<td><button type="button" title="Xem đánh dấu" id="myBookmark" accesskey="m">Xem</button></td>
-							</tr>
-						</table>
-					</fieldset>
-				</form>
+								<!--<tr>-->
+									<!--<td><button type="submit" title="Gửi">Thêm</button></td>-->
+									<!--<td><button type="reset" title="Xóa thông tin nhập" id="Clear" accesskey="c">Xóa</button></td>-->
+									<!--<td><button type="button" title="Xem đánh dấu" id="myBookmark" accesskey="m">Xem</button></td>-->
+								<!--</tr>-->
+							<!--</table>-->
+							<div class="form-group">
+								<label class="control-label col-sm-2 hidden-xs" for="Name">Tên:</label>
+								<div class="col-sm-10 col-xs-12">
+									<input type="text" name="Name" id="Name" class="form-control" placeholder="Tên đánh dấu" required accesskey="n">
+								</div>
+							</div>
 
-				<div id="Data"></div>
+							<div class="form-group">
+								<label class="control-label col-sm-2 hidden-xs" for="Url">Liên kết:</label>
+								<div class="col-sm-10 col-xs-12">
+									<input type="url" name="Url" id="Url" class="form-control" placeholder="Địa chỉ đánh dấu" autofocus required accesskey="u">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-xs-4">
+									<button type="submit" class="btn btn-success" title="Gửi">Thêm</button>
+								</div>
+
+								<div class="col-xs-4">
+									<button type="reset" class="btn btn-primary" title="Xóa thông tin nhập" id="Clear" accesskey="c">Xóa</button>
+								</div>
+
+								<div class="col-xs-4">
+									<button type="button" class="btn btn-info" title="Xem đánh dấu" id="myBookmark" accesskey="m">Xem</button>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+
+					<div id="Data"></div>
+				</div>
+
+				<p style="color:#f00">Copyright &copy; 2011 Hoàng Ân</p>
 			</div>
-
-			<p style="color:#f00">Copyright &copy; 2011 Hoàng Ân</p>
 		</body>
 	</html>
