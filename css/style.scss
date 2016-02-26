@@ -1,0 +1,21 @@
+$sm: 10px;
+
+#wrap {
+	border: 3px solid #00f;
+	border-radius: 5px;
+	margin: $sm auto;
+	padding: $sm;
+}
+
+#Data {
+	display: none;
+}
+
+.Table {
+	table-layout: fixed;
+	word-wrap: break-word;
+}
+
+.text-reponsive {
+	font-size: 1.1vw;
+}

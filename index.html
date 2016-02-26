@@ -4,23 +4,16 @@
 			<title>My Bookmark</title>
 			<meta charset="UTF-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1">
-			<link rel="stylesheet" href="css/AnStyle.css">
-			<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+			<link rel="stylesheet" href="css/style.css">
+			<link rel="stylesheet" href="css/bootstrap.min.css">
+			<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 			<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 			<script>
 				if(!window.jQuery) {
 					document.write('<script src="js/jquery.min.js"><\/script>');
 				}
 			</script>
-			<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-			<script>
-				if(!window.jQuery.fn.modal) {
-					document.write('<script src="js/bootstrap.min.js"><\/script>');
-					document.write('<link rel="stylesheet" href="css/bootstrap.min.css">');
-				}
-			</script>
 			<script src="js/Anload.js"></script>
-			<script src="js/Anscript.js"></script>
 		</head>
 
 		<body class="text-reponsive">
@@ -62,7 +55,8 @@
 					<div id="Data"></div>
 				</div>
 
-				<p style="color:#f00">Copyright &copy; 2011 Hoàng Ân</p>
+				<p style="color:#f00">Copyright &copy; 2011<script>new Date().getFullYear() > 2011 && document.write("-" + new Date().getFullYear());</script>, Hoàng Ân</p>
 			</div>
+			<script src="js/script.js"></script>
 		</body>
 	</html>
